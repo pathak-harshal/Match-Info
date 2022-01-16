@@ -17,10 +17,11 @@ class HomeViewVC: UIViewController {
     }
 
     @IBAction func actionOpenInfo(_ sender: UIButton) {
-        DataBaseManger.saveTeamsPlayersToDB(fromUrl: 1) { isSuccess in
-            print("Came back to viewcontroller")
+        let tag = sender.tag
+        self.showHUD(progressLabel: "Loading")
+        DataBaseManger.saveTeamsPlayersToDB(fromUrl: tag) { isSuccess in
+            self.dismissHUD(isAnimated: true)
             if isSuccess {
-                
                 guard let matchInfoVC = MatchInfoViewVC.instantiate() else { return }
                 self.navigationController?.pushViewController(matchInfoVC, animated: true)
             }

@@ -28,6 +28,9 @@
 		5E0322B82792A30700788CC4 /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0322B42792A30700788CC4 /* Team+CoreDataProperties.swift */; };
 		5E0322BE2792A90400788CC4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0322BD2792A90400788CC4 /* Reachability.m */; };
 		5E0322C02792A94300788CC4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0322BF2792A94300788CC4 /* Constants.swift */; };
+		5E5F5A1D27948A08007CF938 /* PlayersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F5A1B27948A08007CF938 /* PlayersListVC.swift */; };
+		5E5F5A1E27948A08007CF938 /* PlayersListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5F5A1C27948A08007CF938 /* PlayersListVC.xib */; };
+		5E5F5A2127948F77007CF938 /* Extension+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F5A2027948F77007CF938 /* Extension+ViewController.swift */; };
 		5E8338152792D7DE0009ECCC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8338142792D7DE0009ECCC /* CoreDataStack.swift */; };
 		5E83381C2792DDCC0009ECCC /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 5E83381B2792DDCC0009ECCC /* MBProgressHUD */; };
 		5E83381E2792DEAD0009ECCC /* DataBaseManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83381D2792DEAD0009ECCC /* DataBaseManger.swift */; };
@@ -60,6 +63,9 @@
 		5E0322BC2792A90400788CC4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		5E0322BD2792A90400788CC4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5E0322BF2792A94300788CC4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5E5F5A1B27948A08007CF938 /* PlayersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListVC.swift; sourceTree = "<group>"; };
+		5E5F5A1C27948A08007CF938 /* PlayersListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayersListVC.xib; sourceTree = "<group>"; };
+		5E5F5A2027948F77007CF938 /* Extension+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewController.swift"; sourceTree = "<group>"; };
 		5E8338142792D7DE0009ECCC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5E83381D2792DEAD0009ECCC /* DataBaseManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManger.swift; sourceTree = "<group>"; };
 		5E83381F2792E11C0009ECCC /* NetworkManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
@@ -113,7 +119,8 @@
 		5E03227D2792995D00788CC4 /* Match Info */ = {
 			isa = PBXGroup;
 			children = (
-				5E83382327930A1E0009ECCC /* New Group */,
+				5E5F5A1F27948F60007CF938 /* Extensions */,
+				5E5F5A15279465CB007CF938 /* Cell */,
 				5E0322BA2792A8ED00788CC4 /* Utility */,
 				5E032297279299AB00788CC4 /* Core Data Models */,
 				5E0322952792997D00788CC4 /* Supporting Files */,
@@ -142,6 +149,7 @@
 		5E0322962792999400788CC4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E5F5A1A279489E1007CF938 /* PlayerList View Controller */,
 				5E0322A527929D4000788CC4 /* Info Child View Controllers */,
 				5E0322822792995D00788CC4 /* HomeViewVC.swift */,
 				5E0322A327929CFE00788CC4 /* MatchInfoViewVC.swift */,
@@ -191,21 +199,37 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		5E5F5A15279465CB007CF938 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5E5F5A1A279489E1007CF938 /* PlayerList View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F5A1B27948A08007CF938 /* PlayersListVC.swift */,
+				5E5F5A1C27948A08007CF938 /* PlayersListVC.xib */,
+			);
+			path = "PlayerList View Controller";
+			sourceTree = "<group>";
+		};
+		5E5F5A1F27948F60007CF938 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F5A2027948F77007CF938 /* Extension+ViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5E6137EB0C6FB3076549FEAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				608E8A50EB1D91C7EBDE67BF /* Pods-Match Info.debug.xcconfig */,
 				0D2A1FE8D4961874FEC920FB /* Pods-Match Info.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		5E83382327930A1E0009ECCC /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +286,10 @@
 			);
 			mainGroup = 5E0322722792995C00788CC4;
 			packageReferences = (
-				5E03229827929A9200788CC4 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */,
-				5E03229B27929AA100788CC4 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				5E03229827929A9200788CC4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				5E03229B27929AA100788CC4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5E03229E27929AC300788CC4 /* XCRemoteSwiftPackageReference "Material" */,
-				5E83381A2792DDCC0009ECCC /* XCRemoteSwiftPackageReference "MBProgressHUD.git" */,
+				5E83381A2792DDCC0009ECCC /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 			);
 			productRefGroup = 5E03227C2792995D00788CC4 /* Products */;
 			projectDirPath = "";
@@ -284,6 +308,7 @@
 				5E03228E2792995E00788CC4 /* LaunchScreen.storyboard in Resources */,
 				5E03228B2792995E00788CC4 /* Assets.xcassets in Resources */,
 				5E0322862792995D00788CC4 /* Main.storyboard in Resources */,
+				5E5F5A1E27948A08007CF938 /* PlayersListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +368,10 @@
 				5E0322B82792A30700788CC4 /* Team+CoreDataProperties.swift in Sources */,
 				5E83381E2792DEAD0009ECCC /* DataBaseManger.swift in Sources */,
 				5E8338212792E11C0009ECCC /* NetworkManger.swift in Sources */,
+				5E5F5A2127948F77007CF938 /* Extension+ViewController.swift in Sources */,
 				5E0322C02792A94300788CC4 /* Constants.swift in Sources */,
 				5E03227F2792995D00788CC4 /* AppDelegate.swift in Sources */,
+				5E5F5A1D27948A08007CF938 /* PlayersListVC.swift in Sources */,
 				5E8338152792D7DE0009ECCC /* CoreDataStack.swift in Sources */,
 				5E0322B62792A30700788CC4 /* Player+CoreDataProperties.swift in Sources */,
 				5E0322B72792A30700788CC4 /* Team+CoreDataClass.swift in Sources */,
@@ -583,7 +610,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5E03229827929A9200788CC4 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */ = {
+		5E03229827929A9200788CC4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
@@ -591,7 +618,7 @@
 				kind = branch;
 			};
 		};
-		5E03229B27929AA100788CC4 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		5E03229B27929AA100788CC4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -607,7 +634,7 @@
 				kind = branch;
 			};
 		};
-		5E83381A2792DDCC0009ECCC /* XCRemoteSwiftPackageReference "MBProgressHUD.git" */ = {
+		5E83381A2792DDCC0009ECCC /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
 			requirement = {
@@ -620,12 +647,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5E03229927929A9200788CC4 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5E03229827929A9200788CC4 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */;
+			package = 5E03229827929A9200788CC4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
 		5E03229C27929AA100788CC4 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5E03229B27929AA100788CC4 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 5E03229B27929AA100788CC4 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		5E03229F27929AC300788CC4 /* Material */ = {
@@ -635,7 +662,7 @@
 		};
 		5E83381B2792DDCC0009ECCC /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5E83381A2792DDCC0009ECCC /* XCRemoteSwiftPackageReference "MBProgressHUD.git" */;
+			package = 5E83381A2792DDCC0009ECCC /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
 			productName = MBProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */

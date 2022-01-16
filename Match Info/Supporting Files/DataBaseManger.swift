@@ -34,6 +34,21 @@ class DataBaseManger: NSObject {
         return title
     }
     
+    class func fetchPlayers(teamId: Int64) -> [Player] {
+        let context = CoreDataStack.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        let predicate = NSPredicate(format: "team.team_id == \(teamId)")
+        fetchRequest.predicate = predicate
+        let sorting = NSSortDescriptor(key: "player_position", ascending: true)
+        fetchRequest.sortDescriptors = [sorting]
+        guard let players = try? context.fetch(fetchRequest) as? [Player] else {
+            return [Player]()
+            
+        }
+        
+        return players
+    }
+    
     class func fetchAllTeamswithPlayers() -> [Team] {
         let context = CoreDataStack.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Team")

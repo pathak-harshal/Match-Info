@@ -19,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWS-LW-ZQL">
                                 <rect key="frame" x="16" y="108" width="382" height="110"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-MU-ame">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-MU-ame">
                                         <rect key="frame" x="16" y="16" width="350" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="szi-B4-kzD"/>
@@ -30,7 +30,7 @@
                                             <action selector="actionOpenInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZDN-NJ-OmC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-nD-VCe">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z2-nD-VCe">
                                         <rect key="frame" x="16" y="63" width="350" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="J0f-W7-Xb4"/>
@@ -131,30 +131,48 @@ Stay Tuned!</string>
         <!--Info-->
         <scene sceneID="FuA-5j-a8w">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S6Y-bD-64J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="InfoViewVC" id="rLZ-Mv-Kp3" customClass="InfoViewVC" customModule="Match_Info" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6c-4n-cbv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIA-db-eEi">
-                                <rect key="frame" x="113.5" y="427.5" width="187.5" height="41"/>
-                                <string key="text">Info Page Coming Soon..
-Stay Tuned!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6TO-IS-BSA" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Tdj-bx-bo4"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VVy-Xl-Wzc">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-ja-Lzh">
+                                <rect key="frame" x="0.0" y="74" width="414" height="739"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yB8-of-UZa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MIA-db-eEi" firstAttribute="centerX" secondItem="c6c-4n-cbv" secondAttribute="centerX" id="U37-8K-CVs"/>
-                            <constraint firstItem="MIA-db-eEi" firstAttribute="centerY" secondItem="c6c-4n-cbv" secondAttribute="centerY" id="jco-sV-LVJ"/>
+                            <constraint firstItem="0r9-ja-Lzh" firstAttribute="leading" secondItem="yB8-of-UZa" secondAttribute="leading" id="5rH-EB-pNC"/>
+                            <constraint firstItem="6TO-IS-BSA" firstAttribute="leading" secondItem="yB8-of-UZa" secondAttribute="leading" id="CzN-Js-JVq"/>
+                            <constraint firstItem="0r9-ja-Lzh" firstAttribute="top" secondItem="6TO-IS-BSA" secondAttribute="bottom" id="LW3-wL-zRL"/>
+                            <constraint firstItem="6TO-IS-BSA" firstAttribute="top" secondItem="yB8-of-UZa" secondAttribute="top" id="SdA-gL-ZMd"/>
+                            <constraint firstItem="yB8-of-UZa" firstAttribute="trailing" secondItem="6TO-IS-BSA" secondAttribute="trailing" id="YpM-Yn-OKm"/>
+                            <constraint firstItem="yB8-of-UZa" firstAttribute="bottom" secondItem="0r9-ja-Lzh" secondAttribute="bottom" id="iWL-Uv-3XP"/>
+                            <constraint firstItem="yB8-of-UZa" firstAttribute="trailing" secondItem="0r9-ja-Lzh" secondAttribute="trailing" id="q5O-bK-kEw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="info.circle.fill" catalog="system" id="fEy-Wf-BEn"/>
+                    <connections>
+                        <outlet property="buttonBarView" destination="6TO-IS-BSA" id="aAu-NT-gUr"/>
+                        <outlet property="containerView" destination="0r9-ja-Lzh" id="Hg5-Sf-ioe"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6Y-bD-64J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3545" y="-222"/>
         </scene>

@@ -8,5 +8,7 @@
 import Foundation
 
 struct K {
-    
+    struct CellIndetifier {
+        static let playerCell = "PlayerCell"
+    }
 }
