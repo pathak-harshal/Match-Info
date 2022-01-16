@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="player_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="player_is_captain" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="player_is_wicket_keeper" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="player_name" optional="YES" attributeType="String"/>
+        <attribute name="player_position" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="players" inverseEntity="Team"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES">
+        <attribute name="team_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="team_name" optional="YES" attributeType="String"/>
+        <attribute name="team_short_name" optional="YES" attributeType="String"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="team" inverseEntity="Player"/>
+    </entity>
+    <elements>
+        <element name="Team" positionX="-331.0428466796875" positionY="62.29705810546875" width="128" height="88"/>
+        <element name="Player" positionX="-17.51812744140625" positionY="62.40499877929688" width="128" height="118"/>
+    </elements>
+</model>
